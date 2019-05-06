@@ -1,0 +1,10 @@
+﻿@model  IEnumerable<ShopWishConnection.LoaiSanPham>
+@foreach (var item in Model)
+{
+    <li class="p-t-4">
+
+        <a href="@Url.Action("Index","LoaiSanPham",new {id= @item.MaLoaiSanPham})">@item.TenLoaiSanPham</a>
+
+    </li>
+
+}

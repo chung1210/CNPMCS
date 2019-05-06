@@ -1,0 +1,54 @@
+﻿@model  IEnumerable<ShopWishConnection.SanPham>
+<!-- Relate Product -->
+<section class="relateproduct bgwhite p-t-45 p-b-138">
+    <div class="container">
+        <div class="sec-title p-b-60">
+            <h3 class="m-text5 t-center">
+                SẢN PHẨM ĐÃ XEM
+            </h3>
+        </div>
+
+        <!-- Slide2 -->
+        <div class="wrap-slick2">
+            <div class="slick2">
+                @foreach (var item in Model)
+                {
+                    <div class="item-slick2 p-l-15 p-r-15">
+                        <!-- Block2 -->
+                        <div class="block2">
+                            <div class="block2-img wrap-pic-w of-hidden pos-relative ">
+
+                                <img style="max-width:720px;max-height:960px;" src="~/Asset/images/@item.MoreImages" />
+                                <div class="block2-overlay trans-0-4">
+
+
+                                    <div class="block2-btn-addcart w-size1 trans-0-4">
+                                        <!-- Button -->
+                                        <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                          
+                            <div class="block2-txt p-t-20">
+
+                                <a href="@Url.Action("Details",new { id= @item.MaSanPham })">@item.TenSanPham</a>
+                                <div id="masanpham">Mã sản phẩm: @item.MaSanPham</div>
+
+                                <span class="block2-price m-text6 p-r-5">
+                                    @string.Format("{0:0,000 VNĐ}", Convert.ToDecimal(item.Price))
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+
+    </div>
+</section>
+
+

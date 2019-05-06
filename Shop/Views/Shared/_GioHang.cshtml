@@ -1,0 +1,10 @@
+﻿@model  ShopWishConnection.SanPham
+<div class="block2-txt p-t-20">
+    <a href="#" class="block2-name dis-block s-text3 p-b-5">
+        @Model.TenSanPham
+    </a>
+    <div id="masanpham">Mã sản phẩm: @Model.MaSanPham</div>
+    <span class="block2-price m-text6 p-r-5">
+        @string.Format("{0:0,000 VNĐ}", Convert.ToDecimal(Model.Price))
+    </span>
+</div>
