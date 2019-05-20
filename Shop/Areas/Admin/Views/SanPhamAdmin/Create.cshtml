@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+<script src="~/Areas/AssetAdmin/js/product/previewFile.js"></script>
+<h2>Create</h2>
+<style>
+    input [type-text] {
+        width: 100%;
+        height: 40px;
+        background: black;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ff0000;
+        border-radius: 2px;
+        box-sizing: border-box;
+        color: black !important;
+    }
+
+    input [type-number] {
+        width: 100%;
+        height: 40px;
+        background: black;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ff0000;
+        border-radius: 4px;
+        box-sizing: border-box;
+        color: black !important;
+    }
+
+    input [type-submit] {
+        width: 100%;
+        background-color: #2a9fd6;
+        color: black;
+        
+        padding: 14px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        input [type-submit]:hover {
+            background-color: #45a049;
+        }
+</style>
+
+@using (Html.BeginForm("Create", "SanPhamAdmin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <table style="width:80%; margin:auto; background:black;">
+        <tr>
+            <td> Mã Sản Phẩm</td>
+            <td> <input style="width:300px; background-color:black; float:left; height:35px" maxlength="11" type="text" name="MaSanPham" required /></td>
+            <td rowspan="8">
+                <div style="width:320px;height:300px">
+                    &nbsp;
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td> Mã Loại Sản Phẩm</td>
+            <td>
+                @Html.DropDownList("MaLoaiSanPham", null, new { @style = "float:left;width:300px; background:black; height:30px;" })
+            </td>
+        </tr>
+
+        <tr>
+            <td> Tên Sản Phẩm</td>
+            <td>
+                <input style="width:300px;background-color:black; float:left; height:35px" maxlength="11" type="text" name="TenSanPham" required />
+            </td>
+        </tr>
+
+        <tr>
+            <td> Hình </td>
+            <td> <input type="file" name="Hinh" required /></td>
+        </tr>
+
+        <tr>
+            <td> Giá </td>
+            <td> <input style="width:300px;float:left;background-color:black; " type="number" name="Gia" required /></td>
+        </tr>
+
+        <tr>
+            <td style="width:300px;"> Ghi Chú </td>
+            <td colspan="2"><textarea class="ckeditor" name="GhiChu" style="width:300px;height:150px;margin-top:100px;   max-width:100px;max-height:600px;" rows="4" cols="30"></textarea></td>
+        </tr>
+
+      
+
+        <tr>
+            <td colspan="3">
+                <input style="height:40px;width:300px;margin-left:32%; margin-top:30px; background:#016ABC; color:#fff; border: 1px solid #eee;  border-radius:20px;
+    " type="submit" name="btn_ThemSanPham" value="Hoàn Tất Thêm Sản Phẩm" />
+            </td>
+        </tr>
+    </table>
+}

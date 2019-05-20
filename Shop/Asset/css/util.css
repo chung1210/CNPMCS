@@ -1977,7 +1977,7 @@
 .m-r-6 {margin-right: 6px;}
 .m-r-7 {margin-right: 7px;}
 .m-r-8 {margin-right: 8px;}
-.m-r-9 {margin-right: 9px;}
+.m-r-9 {margin-right: 9px;margin-top:10px;}
 .m-r-10 {margin-right: 10px;}
 .m-r-11 {margin-right: 11px;}
 .m-r-12 {margin-right: 12px;}
@@ -2356,7 +2356,11 @@
 /*[ Wrap Picture ]
 -----------------------------------------------------------
 */
-.wrap-pic-w img {width: 100%;}
+.wrap-pic-w img {
+    width: 100%;
+    position: relative;
+}
+
 .wrap-pic-max-w img {max-width: 100%;}
 
 /* ------------------------------------ */
@@ -3134,9 +3138,10 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 
 .s-text17 {
 	font-family: Montserrat-Regular;
-	font-size: 12px;
-	color: #888888;
+	font-size: 14px;
+	color: black;
 	line-height: 1.8;
+    margin-top:5px;
 }
 
 .s-text18 {
@@ -3462,7 +3467,7 @@ SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE
 */
 .size1 {
 	width: 100%;
-	height: 40px;
+	height: 30px;
 }
 
 .size2 {

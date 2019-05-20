@@ -21,7 +21,7 @@ namespace Shop.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("ShopWishConnection", throwIfV1Schema: false)
+            : base("ShopDegreyConnection", throwIfV1Schema: false)
         {
         }
 

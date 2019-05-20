@@ -24,9 +24,9 @@
 // 
 // The following connection settings were used to generate this file
 // 
-//     Connection String Name: `ShopWishConnection`
+//     Connection String Name: `ShopDegreyConnection`
 //     Provider:               `System.Data.SqlClient`
-//     Connection String:      `Data Source=DESKTOP-8M8J4MH\SQLEXPRESS;Initial Catalog=ShopWish;Integrated Security=True`
+//     Connection String:      `Data Source=DESKTOP-RMV5NGE\SQLEXPRESS;Initial Catalog=ShopDegrey;Integrated Security=True`
 //     Schema:                 ``
 //     Include Views:          `False`
 
@@ -38,18 +38,18 @@ using System.Linq;
 using System.Web;
 using PetaPoco;
 
-namespace ShopWishConnection
+namespace ShopDegreyConnection
 {
 
-	public partial class ShopWishConnectionDB : Database
+	public partial class ShopDegreyConnectionDB : Database
 	{
-		public ShopWishConnectionDB() 
-			: base("ShopWishConnection")
+		public ShopDegreyConnectionDB() 
+			: base("ShopDegreyConnection")
 		{
 			CommonConstruct();
 		}
 
-		public ShopWishConnectionDB(string connectionStringName) 
+		public ShopDegreyConnectionDB(string connectionStringName) 
 			: base(connectionStringName)
 		{
 			CommonConstruct();
@@ -59,11 +59,11 @@ namespace ShopWishConnection
 		
 		public interface IFactory
 		{
-			ShopWishConnectionDB GetInstance();
+			ShopDegreyConnectionDB GetInstance();
 		}
 		
 		public static IFactory Factory { get; set; }
-        public static ShopWishConnectionDB GetInstance()
+        public static ShopDegreyConnectionDB GetInstance()
         {
 			if (_instance!=null)
 				return _instance;
@@ -71,10 +71,10 @@ namespace ShopWishConnection
 			if (Factory!=null)
 				return Factory.GetInstance();
 			else
-				return new ShopWishConnectionDB();
+				return new ShopDegreyConnectionDB();
         }
 
-		[ThreadStatic] static ShopWishConnectionDB _instance;
+		[ThreadStatic] static ShopDegreyConnectionDB _instance;
 		
 		public override void OnBeginTransaction()
 		{
@@ -91,7 +91,7 @@ namespace ShopWishConnection
 
 		public class Record<T> where T:new()
 		{
-			public static ShopWishConnectionDB repo { get { return ShopWishConnectionDB.GetInstance(); } }
+			public static ShopDegreyConnectionDB repo { get { return ShopDegreyConnectionDB.GetInstance(); } }
 			public bool IsNew() { return repo.IsNew(this); }
 			public object Insert() { return repo.Insert(this); }
 
@@ -137,6 +137,326 @@ namespace ShopWishConnection
 
     
 
+	[TableName("dbo.__MigrationHistory")]
+
+
+
+	[PrimaryKey("MigrationId", AutoIncrement=false)]
+
+
+	[ExplicitColumns]
+
+    public partial class __MigrationHistory : ShopDegreyConnectionDB.Record<__MigrationHistory>  
+    {
+
+
+
+		[Column] public string MigrationId { get; set; }
+
+
+
+
+
+		[Column] public string ContextKey { get; set; }
+
+
+
+
+
+		[Column] public byte[] Model { get; set; }
+
+
+
+
+
+		[Column] public string ProductVersion { get; set; }
+
+
+
+	}
+
+    
+
+	[TableName("dbo.AspNetRoles")]
+
+
+
+	[PrimaryKey("Id", AutoIncrement=false)]
+
+
+	[ExplicitColumns]
+
+    public partial class AspNetRole : ShopDegreyConnectionDB.Record<AspNetRole>  
+    {
+
+
+
+		[Column] public string Id { get; set; }
+
+
+
+
+
+		[Column] public string Name { get; set; }
+
+
+
+	}
+
+    
+
+	[TableName("dbo.AspNetUserClaims")]
+
+
+
+	[PrimaryKey("Id")]
+
+
+
+
+	[ExplicitColumns]
+
+    public partial class AspNetUserClaim : ShopDegreyConnectionDB.Record<AspNetUserClaim>  
+    {
+
+
+
+		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public string UserId { get; set; }
+
+
+
+
+
+		[Column] public string ClaimType { get; set; }
+
+
+
+
+
+		[Column] public string ClaimValue { get; set; }
+
+
+
+	}
+
+    
+
+	[TableName("dbo.AspNetUserLogins")]
+
+
+
+	[PrimaryKey("LoginProvider", AutoIncrement=false)]
+
+
+	[ExplicitColumns]
+
+    public partial class AspNetUserLogin : ShopDegreyConnectionDB.Record<AspNetUserLogin>  
+    {
+
+
+
+		[Column] public string LoginProvider { get; set; }
+
+
+
+
+
+		[Column] public string ProviderKey { get; set; }
+
+
+
+
+
+		[Column] public string UserId { get; set; }
+
+
+
+	}
+
+    
+
+	[TableName("dbo.AspNetUserRoles")]
+
+
+
+	[PrimaryKey("UserId", AutoIncrement=false)]
+
+
+	[ExplicitColumns]
+
+    public partial class AspNetUserRole : ShopDegreyConnectionDB.Record<AspNetUserRole>  
+    {
+
+
+
+		[Column] public string UserId { get; set; }
+
+
+
+
+
+		[Column] public string RoleId { get; set; }
+
+
+
+	}
+
+    
+
+	[TableName("dbo.AspNetUsers")]
+
+
+
+	[PrimaryKey("Id", AutoIncrement=false)]
+
+
+	[ExplicitColumns]
+
+    public partial class AspNetUser : ShopDegreyConnectionDB.Record<AspNetUser>  
+    {
+
+
+
+		[Column] public string Id { get; set; }
+
+
+
+
+
+		[Column] public string Email { get; set; }
+
+
+
+
+
+		[Column] public bool EmailConfirmed { get; set; }
+
+
+
+
+
+		[Column] public string PasswordHash { get; set; }
+
+
+
+
+
+		[Column] public string SecurityStamp { get; set; }
+
+
+
+
+
+		[Column] public string PhoneNumber { get; set; }
+
+
+
+
+
+		[Column] public bool PhoneNumberConfirmed { get; set; }
+
+
+
+
+
+		[Column] public bool TwoFactorEnabled { get; set; }
+
+
+
+
+
+		[Column] public DateTime? LockoutEndDateUtc { get; set; }
+
+
+
+
+
+		[Column] public bool LockoutEnabled { get; set; }
+
+
+
+
+
+		[Column] public int AccessFailedCount { get; set; }
+
+
+
+
+
+		[Column] public string UserName { get; set; }
+
+
+
+	}
+
+    
+
+	[TableName("dbo.BinhLuan")]
+
+
+
+	[PrimaryKey("MaBinhLuan")]
+
+
+
+
+	[ExplicitColumns]
+
+    public partial class BinhLuan : ShopDegreyConnectionDB.Record<BinhLuan>  
+    {
+
+
+
+		[Column] public int MaBinhLuan { get; set; }
+
+
+
+
+
+		[Column] public string MaSanPham { get; set; }
+
+
+
+
+
+		[Column] public string MaTaiKhoan { get; set; }
+
+
+
+
+
+		[Column] public string TenTaiKhoan { get; set; }
+
+
+
+
+
+		[Column] public string NoiDung { get; set; }
+
+
+
+
+
+		[Column] public int? TinhTrang { get; set; }
+
+
+
+
+
+		[Column] public DateTime? Ngay { get; set; }
+
+
+
+	}
+
+    
+
 	[TableName("dbo.ChiTietHoaDon")]
 
 
@@ -146,7 +466,7 @@ namespace ShopWishConnection
 
 	[ExplicitColumns]
 
-    public partial class ChiTietHoaDon : ShopWishConnectionDB.Record<ChiTietHoaDon>  
+    public partial class ChiTietHoaDon : ShopDegreyConnectionDB.Record<ChiTietHoaDon>  
     {
 
 
@@ -175,7 +495,7 @@ namespace ShopWishConnection
 
 
 
-		[Column] public int? Price { get; set; }
+		[Column] public int? Gia { get; set; }
 
 
 
@@ -193,12 +513,14 @@ namespace ShopWishConnection
 
 
 
-	[PrimaryKey("IdGH", AutoIncrement=false)]
+	[PrimaryKey("IdGH")]
+
+
 
 
 	[ExplicitColumns]
 
-    public partial class GioHang : ShopWishConnectionDB.Record<GioHang>  
+    public partial class GioHang : ShopDegreyConnectionDB.Record<GioHang>  
     {
 
 
@@ -233,7 +555,7 @@ namespace ShopWishConnection
 
 
 
-		[Column] public int? Price { get; set; }
+		[Column] public int? Gia { get; set; }
 
 
 
@@ -245,7 +567,7 @@ namespace ShopWishConnection
 
 
 
-		[Column] public string MoreImages { get; set; }
+		[Column] public string Hinh { get; set; }
 
 
 
@@ -257,12 +579,14 @@ namespace ShopWishConnection
 
 
 
-	[PrimaryKey("ID", AutoIncrement=false)]
+	[PrimaryKey("ID")]
+
+
 
 
 	[ExplicitColumns]
 
-    public partial class HoaDon : ShopWishConnectionDB.Record<HoaDon>  
+    public partial class HoaDon : ShopDegreyConnectionDB.Record<HoaDon>  
     {
 
 
@@ -326,7 +650,7 @@ namespace ShopWishConnection
 
 	[ExplicitColumns]
 
-    public partial class LoaiSanPham : ShopWishConnectionDB.Record<LoaiSanPham>  
+    public partial class LoaiSanPham : ShopDegreyConnectionDB.Record<LoaiSanPham>  
     {
 
 
@@ -360,7 +684,7 @@ namespace ShopWishConnection
 
 	[ExplicitColumns]
 
-    public partial class SanPham : ShopWishConnectionDB.Record<SanPham>  
+    public partial class SanPham : ShopDegreyConnectionDB.Record<SanPham>  
     {
 
 
@@ -383,13 +707,31 @@ namespace ShopWishConnection
 
 
 
-		[Column] public string MoreImages { get; set; }
+		[Column] public string ChiTietSanPham { get; set; }
 
 
 
 
 
-		[Column] public int? Price { get; set; }
+		[Column] public string Hinh { get; set; }
+
+
+
+
+
+		[Column] public string Hinh1 { get; set; }
+
+
+
+
+
+		[Column] public string Hinh2 { get; set; }
+
+
+
+
+
+		[Column] public int? Gia { get; set; }
 
 
 
@@ -401,7 +743,7 @@ namespace ShopWishConnection
 
 
 
-		[Column] public int? LuotView { get; set; }
+		[Column] public int? LuotXem { get; set; }
 
 
 
@@ -414,54 +756,6 @@ namespace ShopWishConnection
 
 
 		[Column] public string GhiChu { get; set; }
-
-
-
-	}
-
-    
-
-	[TableName("dbo.sysdiagrams")]
-
-
-
-	[PrimaryKey("diagram_id")]
-
-
-
-
-	[ExplicitColumns]
-
-    public partial class sysdiagram : ShopWishConnectionDB.Record<sysdiagram>  
-    {
-
-
-
-		[Column] public string name { get; set; }
-
-
-
-
-
-		[Column] public int principal_id { get; set; }
-
-
-
-
-
-		[Column] public int diagram_id { get; set; }
-
-
-
-
-
-		[Column] public int? version { get; set; }
-
-
-
-
-
-		[Column] public byte[] definition { get; set; }
 
 
 

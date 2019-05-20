@@ -1,4 +1,4 @@
-﻿@model  IEnumerable<ShopWishConnection.SanPham>
+﻿@model  IEnumerable<ShopDegreyConnection.SanPham>
 
 <!-- New Product -->
 <section class="newproduct bgwhite p-t-45 p-b-105">
@@ -15,9 +15,9 @@
                 @foreach (var item in Model)
                 {
                     string imgMainPath = "";
-                    if (!string.IsNullOrEmpty(@item.MoreImages))
+                    if (!string.IsNullOrEmpty(@item.Hinh))
                     {
-                        imgMainPath = "/Asset/images/" + @item.MoreImages.Split(';')[0];
+                        imgMainPath = "/Asset/images/" + @item.Hinh.Split(';')[0];
                     }
 
                     <div class="item-slick2 p-l-15 p-r-15">
@@ -47,7 +47,7 @@
                                 <div id="masanpham">Mã sản phẩm: @item.MaSanPham</div>
 
                                 <span class="block2-price m-text6 p-r-5">
-                                    @string.Format("{0:0,000 VNĐ}", Convert.ToDecimal(item.Price))
+                                    @string.Format("{0:0,000 VNĐ}", Convert.ToDecimal(item.Gia))
                                 </span>
                             </div>
 

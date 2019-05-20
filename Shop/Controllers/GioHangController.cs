@@ -1,11 +1,10 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity; // lấy id của user.identity trong phần đăng nhập
+using Shop.Models.BUS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ShopWishConnection;
-using Shop.Models.BUS;
-using Microsoft.AspNet.Identity;
 
 namespace Shop.Controllers
 {
@@ -20,11 +19,11 @@ namespace Shop.Controllers
             return View(GioHangBUS.DanhSach(User.Identity.GetUserId()));
         }
         [HttpPost]
-        public ActionResult Them(string masanpham, int soluong, int price, string tensanpham)
+        public ActionResult Them(string masanpham, int soluong, int gia, string tensanpham)
         {
             try
             {
-                GioHangBUS.Them(masanpham, User.Identity.GetUserId(), soluong, price, tensanpham);
+                GioHangBUS.Them(masanpham, User.Identity.GetUserId(), soluong, gia, tensanpham);
                 return RedirectToAction("index");
             }
             catch
@@ -34,11 +33,11 @@ namespace Shop.Controllers
 
         }
         [HttpPost]
-        public ActionResult CapNhat(string masanpham, int soluong, int price, string tensanpham)
+        public ActionResult CapNhat(string masanpham, int soluong, int gia, string tensanpham)
         {
             try
             {
-                GioHangBUS.CapNhat(masanpham, User.Identity.GetUserId(), soluong, price, tensanpham);
+                GioHangBUS.CapNhat(masanpham, User.Identity.GetUserId(), soluong, gia, tensanpham);
                 return RedirectToAction("index");
             }
             catch

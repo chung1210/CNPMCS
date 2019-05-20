@@ -1,4 +1,4 @@
-﻿@model  PagedList.IPagedList<ShopWishConnection.SanPham>
+﻿@model  PagedList.IPagedList<ShopDegreyConnection.SanPham>
 @using PagedList.Mvc;
 @{
     ViewBag.Title = "Index";
@@ -113,13 +113,13 @@
                             </ul>
                         </div>
 
-                        <div class="search-product pos-relative bo4 of-hidden">
+                        @*<div class="search-product pos-relative bo4 of-hidden">
                             <input class="s-text7 size6 p-l-23 p-r-50" type="text" name="search-product" placeholder="Search Products...">
 
                             <button class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4">
                                 <i class="fs-12 fa fa-search" aria-hidden="true"></i>
                             </button>
-                        </div>
+                        </div>*@
                     </div>
                 </div>
 
@@ -159,9 +159,9 @@
                         @foreach (var item in Model)
                         {
                             string imgMainPath = "";
-                            if (!string.IsNullOrEmpty(@item.MoreImages))
+                            if (!string.IsNullOrEmpty(@item.Hinh))
                             {
-                                imgMainPath = "/Asset/images/" + @item.MoreImages.Split(';')[0];
+                                imgMainPath = "/Asset/images/" + @item.Hinh.Split(';')[0];
                             }
                             <div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
 
@@ -180,9 +180,9 @@
                                         <a href="@Url.Action("Details","Shop",new { id= @item.MaSanPham })" class="block2-name dis-block s-text3 p-b-5">
                                             @item.TenSanPham
                                         </a>
-
+                                        <div id="masanpham">Mã sản phẩm: @item.MaSanPham</div>
                                         <span class="block2-price m-text6 p-r-5">
-                                            @string.Format("{0:0,000 VNĐ}", Convert.ToDecimal(item.Price))
+                                            @string.Format("{0:0,000 VNĐ}", Convert.ToDecimal(item.Gia))
                                         </span>
                                     </div>
 

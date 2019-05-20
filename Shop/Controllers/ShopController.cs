@@ -56,7 +56,7 @@ namespace Shop.Controllers
         public string LoadImages(string id)
         {
             var product = ShopBUS.ChiTiet(id);
-            var images = product.MoreImages;
+            var images = product.Hinh;
 
             return images;
         }

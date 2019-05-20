@@ -1,4 +1,4 @@
-﻿@model  IEnumerable<ShopWishConnection.SanPham>
+﻿@model  IEnumerable<ShopDegreyConnection.SanPham>
 <!-- Relate Product -->
 <section class="relateproduct bgwhite p-t-45 p-b-138">
     <div class="container">
@@ -18,7 +18,7 @@
                         <div class="block2">
                             <div class="block2-img wrap-pic-w of-hidden pos-relative ">
 
-                                <img style="max-width:720px;max-height:960px;" src="~/Asset/images/@item.MoreImages" />
+                                <img style="max-width:720px;max-height:960px;" src="~/Asset/images/@item.Hinh" />
                                 <div class="block2-overlay trans-0-4">
 
 
@@ -38,7 +38,7 @@
                                 <div id="masanpham">Mã sản phẩm: @item.MaSanPham</div>
 
                                 <span class="block2-price m-text6 p-r-5">
-                                    @string.Format("{0:0,000 VNĐ}", Convert.ToDecimal(item.Price))
+                                    @string.Format("{0:0,000 VNĐ}", Convert.ToDecimal(item.Gia))
                                 </span>
                             </div>
                         </div>

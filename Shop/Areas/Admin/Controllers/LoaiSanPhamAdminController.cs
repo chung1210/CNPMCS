@@ -1,5 +1,5 @@
 ﻿using Shop.Models.BUS;
-using ShopWishConnection;
+using ShopDegreyConnection;
 using System;
 using System.Collections.Generic;
 using System.Linq;

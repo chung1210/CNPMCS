@@ -99,7 +99,7 @@ body, html {
 a {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.7;
     color: #111;
     margin: 6px;
@@ -535,8 +535,8 @@ iframe {
 /*[ Top bar ]
 ===========================================================*/
 .topbar {
-  height: 45px;
-  background-color: #111;
+  height: 48px;
+  background-color: black;
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -784,7 +784,7 @@ li.sale-noti > a {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background-color: #111111;
+  background-color: red;
   color: white;
   font-family: Montserrat-Medium;
   font-size: 12px;
@@ -2062,11 +2062,11 @@ li.sale-noti > a {
   padding-right: 30px;
 }
 .table-shopping-cart .column-3 {
-  width: 133px;
+  width: 150px;
   padding-right: 30px;
 }
 .table-shopping-cart .column-4 {
-  width: 355px;
+  width: 250px;
   padding-right: 30px;
 }
 .table-shopping-cart .column-5 {
@@ -2075,7 +2075,7 @@ li.sale-noti > a {
 
 .table-shopping-cart .table-head th {
   font-family: Montserrat-Bold;
-  font-size: 13px;
+  font-size: 15px;
   color: #555555;
   line-height: 1.5;
   text-transform: uppercase;
@@ -2315,6 +2315,7 @@ input.num-product {
     -moz-appearance: textfield;
     appearance: none;
     -webkit-appearance: none;
+    margin-left:80px;
 }
 
 input.num-product::-webkit-outer-spin-button,
