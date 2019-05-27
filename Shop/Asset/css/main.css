@@ -2315,7 +2315,7 @@ input.num-product {
     -moz-appearance: textfield;
     appearance: none;
     -webkit-appearance: none;
-    margin-left:80px;
+    margin-left:7px;
 }
 
 input.num-product::-webkit-outer-spin-button,

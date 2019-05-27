@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ShopDegreyConnection.GioHang>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h6> PHIẾU ĐẶT HÀNG : </h6>
+<form style="width:100%; margin:auto;" method="post" action="~/ThanhToan/Them">
+    <input type="Text" style="width:50%; margin-left:25%;" maxlength="100 " placeholder="Nhập tên người nhận" required name="nguoinhan" /> <br /><br />
+    <input type="number" style="width:50%; margin-left:25%;" maxlength="12" placeholder="Nhập số điện thoại người nhận" required name="sdt" /> <br /> <br />
+    <input type="Text" style="width:50%; margin-left:25%;" maxlength="100" placeholder="Nhập địa chỉ người nhận" required name="diachi" /> <br /> <br />
+    <span style="width:50%; margin-left:25%;" name="tongtien">Tổng tiền : @ViewBag.TongTien VNĐ</span><br /> <br />
+    <input style="width:50%; margin-left:25%;" type="submit" value="Đặt hàng" />
+</form>
+<hr style="height:40px;" />
+@foreach (var item in Model)
+{
+    <tr class="table-row">
+        <td class="column-1">
+            <div class="cart-img-product b-rad-4 o-f-hidden">
+                <img src="~/Asset/images/@item.Hinh" alt="IMG-PRODUCT">
+            </div>
+        </td>
+        @Html.Partial("_GioHang", Shop.Models.BUS.ShopBUS.ChiTiet(item.MaSanPham.ToString()))
+        <td class="column-4">
+            <input class="size8 m-text18 t-center num-product" type="number" value="@item.SoLuong" min="1" max="1000" name="soluong" />
+        </td>
+        <td class="column-5"><span>@item.TongTien VNĐ</span></td>
+
+
+    </tr>
+}

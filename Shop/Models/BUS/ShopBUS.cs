@@ -12,10 +12,14 @@ namespace Shop.Models.BUS
 
         public static IEnumerable<SanPham> DanhSach()
         {
-
             var db = new ShopDegreyConnectionDB();
             return db.Query<SanPham>("select * from SanPham where TinhTrang = '0             '");
         }
+        //public static IEnumerable<SanPham> DanhSachASC()
+        //{
+        //    var db = new ShopDegreyConnectionDB();
+        //    return db.Query<SanPham>("select * from SanPham ORDER BY Gia ASC");
+        //}
         public static SanPham ChiTiet(string a)
         {
             var db = new ShopDegreyConnectionDB();

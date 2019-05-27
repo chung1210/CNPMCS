@@ -13,14 +13,20 @@ namespace Shop.Controllers
     public class ShopController : Controller
     {
         // GET: Shop
-        public ActionResult Index(int page = 1, int pagesize = 9)
+        public ActionResult Index(string valueINeed,int page = 1, int pagesize = 12)
         {
             var db = ShopBUS.DanhSach().ToPagedList(page, pagesize);
             return View(db);
         }
 
+        //public ActionResult IndexASC(int page = 1, int pagesize = 12)
+        //{
+        //    var db = ShopBUS.DanhSachASC().ToPagedList(page, pagesize);
+        //    return View(db);
+        //}
+
         // GET: Shop/Details/5
-        public ActionResult Details(String id, int page = 1, int pagesize = 9)
+        public ActionResult Details(String id, int page = 1, int pagesize = 12)
         {
             ShopBUS.CapNhatLuotView(id);
             var db = ShopBUS.ChiTiet(id);

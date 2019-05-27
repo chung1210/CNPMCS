@@ -28,24 +28,25 @@
                         </tr>
                         @foreach (var item in Model)
                         {
-                            <tr class="table-row">
-                                <td class="column-1">
-                                    <div class="cart-img-product b-rad-4 o-f-hidden">
-                                        <img src="~/Asset/images/@item.Hinh" alt="IMG-PRODUCT">
-                                    </div>
-                                </td>
-                                @using (Html.BeginForm("CapNhat", "GioHang", FormMethod.Post))
-                                {
-                                    @*<td class="column-2"><input type="hidden" name="tensanpham" value="@item.TenSanPham" /></td>*@
-                                    @*<td class="column-3"><input type="hidden" name="gia" value="@item.Gia" /></td>*@
-                                    @Html.Partial("_GioHang", Shop.Models.BUS.ShopBUS.ChiTiet(item.MaSanPham.ToString()))
+                    <tr class="table-row">
+                        <td class="column-1">
+                            <div class="cart-img-product b-rad-4 o-f-hidden">
+                                <img src="~/Asset/images/@item.Hinh" alt="IMG-PRODUCT">
+                            </div>
+                        </td>
+                        @using (Html.BeginForm("CapNhat", "GioHang", FormMethod.Post))
+                        {
+                            @*<td class="column-2"><input type="hidden" name="tensanpham" value="@item.TenSanPham" /></td>*@
+                            @*<td class="column-3"><input type="hidden" name="gia" value="@item.Gia" /></td>*@
+                            @Html.Partial("_GioHang", Shop.Models.BUS.ShopBUS.ChiTiet(item.MaSanPham.ToString()))
                             <td class="column-4">
                                 <input class="size8 m-text18 t-center num-product" type="number" value="@item.SoLuong" min="1" max="1000" name="soluong" />
                             </td>
-                                    <td class="column-5"><span>@item.TongTien VNĐ</span></td>
-                                }
-
-                            </tr>
+                            <td class="column-5"><span>@item.TongTien VNĐ</span></td>
+                        }
+                     
+                    </tr>
+                          
                         }
                     </table>
                 </div>

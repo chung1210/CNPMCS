@@ -1,4 +1,4 @@
-﻿
+﻿@*@using Microsoft.AspNet.Identity;*@
 @{
     ViewBag.Title = "_MainLayout";
 }
@@ -41,17 +41,16 @@
 </head>
 <body class="animsition">
 
-
-
-    @{ 
+    @{
         var headerPartial = Html.Partial("_Header");
         headerPartial = new MvcHtmlString(headerPartial.ToString());
     }
     @headerPartial
-  
+
     @RenderBody()
 
     @{ Html.RenderPartial("_Footer");}
+
     @RenderSection("scripts", required: false)
 
 
