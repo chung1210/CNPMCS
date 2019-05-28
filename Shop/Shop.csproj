@@ -3190,6 +3190,7 @@
     <Content Include="Asset\images\IMG_0277.jpg" />
     <Content Include="Asset\images\info.jpg" />
     <Content Include="Asset\images\info2.jpg" />
+    <Content Include="Asset\images\info3.jpg" />
     <Content Include="Asset\images\item-01.jpg" />
     <Content Include="Asset\images\item-02.jpg" />
     <Content Include="Asset\images\item-03.jpg" />
@@ -3213,6 +3214,7 @@
     <Content Include="Asset\images\item-cart-04.jpg" />
     <Content Include="Asset\images\item-cart-05.jpg" />
     <Content Include="Asset\images\item-cart-06.jpg" />
+    <Content Include="Asset\images\logo-bct.png" />
     <Content Include="Asset\images\master-slide-01.jpg" />
     <Content Include="Asset\images\master-slide-02.jpg" />
     <Content Include="Asset\images\master-slide-03.jpg" />

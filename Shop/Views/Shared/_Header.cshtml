@@ -16,11 +16,7 @@
                     Miễn phí vận chuyển cho đơn hàng trên 500.000đ
                 </span>*@
         <div class="search-product pos-relative bo4 of-hidden">
-            @*<input class="s-text7 size1 p-l-20 p-r-50" type="text" name="timkiem" placeholder="Tìm Kiếm...">
-
-        <button class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4">
-            <i class="fs-12 fa fa-search" aria-hidden="true"></i>
-        </button>*@
+            
             <form class="form-search" action="~/TimKiem/KetQuaTimKiem">
                 <input type="hidden" value="" name="MaLoaiSanPham" />
                 <input type="text" class="s-text7 size1 p-l-20 p-r-50" name="timkiem" placeholder="Tìm Kiếm ...">
@@ -74,68 +70,38 @@
 
             <!-- Header Icon -->
             <div class="header-icons">
-                @*<a href="#" class="header-wrapicon1 dis-block">
+                <a href="#" class="header-wrapicon1 dis-block">
                         <img src="~/Asset/images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
-                    </a>*@
+                    </a>
                 @Html.Partial("_LoginPartial")
                 <span class="linedivide1"></span>
 
                 <div class="header-wrapicon2">
-                    @*<img src="~/Asset/images/icons/iconfinder_shopping_cart_empty_172552.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-        <a  href="@Url.Action("index", "GioHang")"><span class="header-icons-noti"></span></a>*@
-
+                   
                     <img src="~/Asset/images/icons/iconfinder_shopping_cart_empty_172552.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
                     <span class="header-icons-noti">0</span>
                     <!-- Header cart noti -->
                     <div class="header-cart header-dropdown">
                         <ul class="header-cart-wrapitem">
-                            <li class="header-cart-item">
-                                <div class="header-cart-item-img">
-                                    <img src="~/Asset/images/item-cart-01.jpg" alt="IMG">
-                                </div>
+                           
+                                <li class="header-cart-item">
+                                    <div class="header-cart-item-img">
+                                        <img src="~/Asset/images/img13.png" alt="IMG">
+                                    </div>
 
-                                <div class="header-cart-item-txt">
-                                    <a href="#" class="header-cart-item-name">
-                                        White Shirt With Pleat Detail Back
-                                    </a>
+                                    <div class="header-cart-item-txt">
+                                        <a href="#" class="header-cart-item-name">
+                                            White Shirt With Pleat Detail Back
+                                        </a>
 
-                                    <span class="header-cart-item-info">
-                                        1 x $19.00
-                                    </span>
-                                </div>
-                            </li>
+                                        <span class="header-cart-item-info">
+                                            1 x $19.00
+                                        </span>
+                                    </div>
+                                </li>
 
-                            <li class="header-cart-item">
-                                <div class="header-cart-item-img">
-                                    <img src="~/Asset/images/item-cart-02.jpg" alt="IMG">
-                                </div>
+                           
 
-                                <div class="header-cart-item-txt">
-                                    <a href="#" class="header-cart-item-name">
-                                        Converse All Star Hi Black Canvas
-                                    </a>
-
-                                    <span class="header-cart-item-info">
-                                        1 x $39.00
-                                    </span>
-                                </div>
-                            </li>
-
-                            <li class="header-cart-item">
-                                <div class="header-cart-item-img">
-                                    <img src="~/Asset/images/item-cart-03.jpg" alt="IMG">
-                                </div>
-
-                                <div class="header-cart-item-txt">
-                                    <a href="#" class="header-cart-item-name">
-                                        Nixon Porter Leather Watch In Tan
-                                    </a>
-
-                                    <span class="header-cart-item-info">
-                                        1 x $17.00
-                                    </span>
-                                </div>
-                            </li>
                         </ul>
 
                         <div class="header-cart-total">
