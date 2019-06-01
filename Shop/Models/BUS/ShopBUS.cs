@@ -15,11 +15,36 @@ namespace Shop.Models.BUS
             var db = new ShopDegreyConnectionDB();
             return db.Query<SanPham>("select * from SanPham where TinhTrang = '0             '");
         }
-        //public static IEnumerable<SanPham> DanhSachASC()
-        //{
-        //    var db = new ShopDegreyConnectionDB();
-        //    return db.Query<SanPham>("select * from SanPham ORDER BY Gia ASC");
-        //}
+        public static IEnumerable<SanPham> DanhSachASC()
+        {
+            var db = new ShopDegreyConnectionDB();
+            return db.Query<SanPham>("select * from SanPham where TinhTrang = '0 ' ORDER BY Gia ASC");
+        }
+        public static IEnumerable<SanPham> DanhSachDESC()
+        {
+            var db = new ShopDegreyConnectionDB();
+            return db.Query<SanPham>("select * from SanPham where TinhTrang = '0 ' ORDER BY Gia DESC");
+        }
+        public static IEnumerable<SanPham> PriceFilter1()
+        {
+            var db = new ShopDegreyConnectionDB();
+            return db.Query<SanPham>("select * from SanPham where TinhTrang = '0 ' AND (Gia BETWEEN 200000 AND 300000) ORDER BY Gia ASC");
+        }
+        public static IEnumerable<SanPham> PriceFilter2()
+        {
+            var db = new ShopDegreyConnectionDB();
+            return db.Query<SanPham>("select * from SanPham where TinhTrang = '0 ' AND (Gia BETWEEN 300000 AND 350000) ORDER BY Gia ASC");
+        }
+        public static IEnumerable<SanPham> PriceFilter3()
+        {
+            var db = new ShopDegreyConnectionDB();
+            return db.Query<SanPham>("select * from SanPham where TinhTrang = '0 ' AND (Gia BETWEEN 350000 AND 400000) ORDER BY Gia ASC");
+        }
+        public static IEnumerable<SanPham> PriceFilter4()
+        {
+            var db = new ShopDegreyConnectionDB();
+            return db.Query<SanPham>("select * from SanPham where TinhTrang = '0 ' AND (Gia BETWEEN 400000 AND 450000) ORDER BY Gia ASC");
+        }
         public static SanPham ChiTiet(string a)
         {
             var db = new ShopDegreyConnectionDB();

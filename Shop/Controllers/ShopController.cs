@@ -13,17 +13,48 @@ namespace Shop.Controllers
     public class ShopController : Controller
     {
         // GET: Shop
-        public ActionResult Index(string valueINeed,int page = 1, int pagesize = 12)
+        public ActionResult Index(int page = 1, int pagesize = 12)
         {
             var db = ShopBUS.DanhSach().ToPagedList(page, pagesize);
             return View(db);
         }
 
-        //public ActionResult IndexASC(int page = 1, int pagesize = 12)
-        //{
-        //    var db = ShopBUS.DanhSachASC().ToPagedList(page, pagesize);
-        //    return View(db);
-        //}
+        public ActionResult priceAscending(int page = 1, int pagesize = 12)
+        {
+            var db = ShopBUS.DanhSachASC().ToPagedList(page, pagesize);
+           return View(db);
+        }
+        public ActionResult priceDescending(int page = 1, int pagesize = 12)
+        {
+            var db = ShopBUS.DanhSachDESC().ToPagedList(page, pagesize);
+            return View(db);
+        }
+
+        public ActionResult priceFilter1(int page = 1, int pagesize = 12)
+        {
+            var db = ShopBUS.PriceFilter1().ToPagedList(page, pagesize);
+            return View(db);
+        }
+        public ActionResult priceFilter2(int page = 1, int pagesize = 12)
+        {
+            var db = ShopBUS.PriceFilter2().ToPagedList(page, pagesize);
+            return View(db);
+        }
+
+        public ActionResult priceFilter3(int page = 1, int pagesize = 12)
+        {
+            var db = ShopBUS.PriceFilter3().ToPagedList(page, pagesize);
+            return View(db);
+        }
+        public ActionResult priceFilter4(int page = 1, int pagesize = 12)
+        {
+            var db = ShopBUS.PriceFilter4().ToPagedList(page, pagesize);
+            return View(db);
+        }
+
+
+
+
 
         // GET: Shop/Details/5
         public ActionResult Details(String id, int page = 1, int pagesize = 12)

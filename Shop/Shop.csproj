@@ -3562,6 +3562,12 @@
     <Content Include="Views\Shared\_GioHang.cshtml" />
     <Content Include="Views\ThanhToan\Index.cshtml" />
     <Content Include="Views\TimKiem\KetQuaTimKiem.cshtml" />
+    <Content Include="Views\Shop\priceAscending.cshtml" />
+    <Content Include="Views\Shop\priceDescending.cshtml" />
+    <Content Include="Views\Shop\priceFilter1.cshtml" />
+    <Content Include="Views\Shop\priceFilter2.cshtml" />
+    <Content Include="Views\Shop\priceFilter3.cshtml" />
+    <Content Include="Views\Shop\priceFilter4.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

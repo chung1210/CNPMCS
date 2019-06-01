@@ -45,11 +45,16 @@
 
                         </li>
 
-                        <li>
-                            @Html.ActionLink("SẢN PHẨM", "Index", "Shop")
-                        </li>
+                        @*<li>
+            @Html.ActionLink("SẢN PHẨM", "Index", "Shop")
+        </li>*@
 
-
+                    <li>
+                        <a href="/Shop">SẢN PHẨM</a>
+                        <ul class="sub_menu">
+                            @Html.Partial("_LoaiSanPham", Shop.Models.BUS.LoaiSanPhamBUS.DanhSach())
+                        </ul>
+                    </li>
 
                         <li>
                             @Html.ActionLink("GIỎ HÀNG", "Index", "GioHang")

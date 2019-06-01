@@ -10,15 +10,15 @@
     <input type="number" style="width:50%; margin-left:25%;" maxlength="12" placeholder="Nhập số điện thoại người nhận" required name="sdt" /> <br /> <br />
     <input type="Text" style="width:50%; margin-left:25%;" maxlength="100" placeholder="Nhập địa chỉ người nhận" required name="diachi" /> <br /> <br />
     <span style="width:50%; margin-left:25%;" name="tongtien">Tổng tiền : @ViewBag.TongTien VNĐ</span><br /> <br />
-    <input style="width:50%; margin-left:25%;" type="submit" value="Đặt hàng" />
+    <input class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4" style="width:50%; margin-left:25%;" type="submit" value="Đặt hàng" />
 </form>
 <hr style="height:40px;" />
-@foreach (var item in Model)
+@*@foreach (var item in Model)
 {
     <tr class="table-row">
         <td class="column-1">
             <div class="cart-img-product b-rad-4 o-f-hidden">
-                <img src="~/Asset/images/@item.Hinh" alt="IMG-PRODUCT">
+                <img src="~/Asset/images/@item.Hinh" alt="IMG-PRODUCT" style="width:150px;">
             </div>
         </td>
         @Html.Partial("_GioHang", Shop.Models.BUS.ShopBUS.ChiTiet(item.MaSanPham.ToString()))
@@ -29,4 +29,4 @@
 
 
     </tr>
-}
+}*@

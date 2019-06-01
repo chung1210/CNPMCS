@@ -1,14 +1,14 @@
 ﻿@model  PagedList.IPagedList<ShopDegreyConnection.SanPham>
 @using PagedList.Mvc;
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "priceFilter4";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-
 <div>
 
-    <!-- Title Page -->
+
     <section class="banner2 bg5 p-t-55 p-b-55">
         <div class="container">
             <div class="row">
@@ -26,7 +26,6 @@
             </div>
         </div>
     </section>
-
 
     <!-- Content page -->
     <section class="bgwhite p-b-65">
@@ -48,35 +47,41 @@
                                 @Html.Partial("_LoaiSanPham", Shop.Models.BUS.LoaiSanPhamBUS.DanhSach())
                             </li>
                         </ul>
+
+
+
+
                     </div>
                 </div>
 
                 <div class="col-sm-6 col-md-8 col-lg-9 p-b-50">
                     <!--  -->
-                    @*<div class="flex-sb-m flex-w p-b-35">
+                    <div class="flex-sb-m flex-w p-b-35">
                         <div class="flex-w">
                             <div class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10">
-                                <select class="selection-2" name="sorting">
-                                    <option>Default Sorting</option>
-                                    <option>Popularity</option>
-                                    <option>Giá: Thấp đến Cao</option>
-                                    <option>Giá: Cao đến Thấp</option>
+                                <select class="selection-2" name="sorting" onchange="location = this.value;">
+                                    <option>Sắp Xếp</option>
+                                    <option value="/Shop/Index">Mặc Định</option>
+                                    <option value="/Shop/priceAscending">Giá Tăng Dần</option>
+                                    <option value="/Shop/priceDescending">Giá Giảm Dần</option>
                                 </select>
                             </div>
 
-                            <div class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10">
-                                <select class="selection-2" name="sorting">
+                            <div class="rs2-select2 bo4 of-hidden w-size10 m-t-5 m-b-5 m-r-10">
+                                <select class="selection-2" name="sorting" onchange="location = this.value;">
                                     <option>Price</option>
-                                    <option>$0.00 - $50.00</option>
-                                    <option>$50.00 - $100.00</option>
-                                    <option>$100.00 - $150.00</option>
-                                    <option>$150.00 - $200.00</option>
-                                    <option>$200.00+</option>
+                                    <option value="/Shop/priceFilter1">200.000VNĐ - 300.000VNĐ</option>
+                                    <option value="/Shop/priceFilter2">300.000VNĐ - 350.000VNĐ</option>
+                                    <option value="/Shop/priceFilter3">350.000VNĐ - 400.000VNĐ</option>
+                                    <option value="/Shop/priceFilter4">400.000VNĐ - 450.000VNĐ</option>
 
                                 </select>
                             </div>
+
                         </div>
-                    </div>*@
+
+
+                    </div>
 
                     <!-- Product -->
                     <div class="row">
@@ -92,16 +97,17 @@
                                 <!-- Block2 -->
                                 <div class="block2">
 
-                                    <div class="block2-img wrap-pic-w of-hidden pos-relative ">
-                                        <a href="@Url.Action("Details","Shop", new { id = @item.MaSanPham })">
+                                    <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                                        <a href="@Url.Action("Details", new { id = @item.MaSanPham })">
 
-                                            <img style="max-width:300px;max-height:400px" src="@imgMainPath" />
+                                            <img style="max-width:350px;max-height:450px" src="@imgMainPath" />
+
                                         </a>
 
                                     </div>
 
                                     <div class="block2-txt p-t-20">
-                                        <a href="@Url.Action("Details","Shop",new { id= @item.MaSanPham })" class="block2-name dis-block s-text3 p-b-5">
+                                        <a href="@Url.Action("Details",new { id= @item.MaSanPham })" class="block2-name dis-block s-text3 p-b-5">
                                             @item.TenSanPham
                                         </a>
                                         <div id="masanpham">Mã sản phẩm: @item.MaSanPham</div>
@@ -119,7 +125,7 @@
                     <!-- Pagination -->
 
                     <div class="pagination ">
-                        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+                        @Html.PagedListPager(Model, page => Url.Action("priceFilter4", new { page }))
                     </div>
 
                 </div>
@@ -140,4 +146,3 @@
     <div id="dropDownSelect2"></div>
 
 </div>
-
