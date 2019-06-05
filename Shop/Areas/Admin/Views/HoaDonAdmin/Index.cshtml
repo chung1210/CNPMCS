@@ -1,0 +1,54 @@
+﻿
+@model  IEnumerable<ShopDegreyConnection.HoaDon>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+
+<h2>Quản Lý Hóa đơn</h2>
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 50%;
+        margin: auto;
+    }
+
+    th, td {
+        text-align: center;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #5d5e63;
+    }
+
+    th {
+        background-color: #2a9fd6;
+        color: white;
+    }
+</style>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Ngày tạo</th>
+        <th>Người đặt</th>
+        <th>Người nhận</th>
+        <th>SDT</th>
+        <th>Địa chỉ</th>
+        <th>Tổng tiền</th>   
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.NgayTao</td>
+            <td>@item.NguoiDat</td>
+            <td>@item.NguoiNhan</td>
+            <td>@item.SDT</td>
+            <td>@item.DiaChi</td>
+            <td>@item.TongTien</td>
+        </tr>
+    }
+
+</table>

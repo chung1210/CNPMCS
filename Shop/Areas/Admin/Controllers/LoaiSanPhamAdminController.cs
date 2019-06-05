@@ -69,22 +69,11 @@ namespace Shop.Areas.Admin.Controllers
             }
         }
         // GET: Admin/LoaiSanPhamAdmin/Delete/5
-        public ActionResult XoaTamThoi(String id)
-        {
-            var db = LoaiSanPhamBUS.ChiTietAdmin(id);
-
-            return View(db);
-        }
-
-        // POST: Admin/LoaiSanPhamAdmin/Delete/5
-        [HttpPost]
         public ActionResult XoaTamThoi(String id, LoaiSanPham lsp)
         {
             try
-            {
-                // TODO: Add delete logic here
-                lsp.TinhTrang = "1";
-                LoaiSanPhamBUS.EditLSP(id, lsp);
+            {            
+                LoaiSanPhamBUS.DeleteLSP(id, lsp);
                 return RedirectToAction("Index");
             }
             catch
@@ -92,6 +81,23 @@ namespace Shop.Areas.Admin.Controllers
                 return View();
             }
         }
+
+        // POST: Admin/LoaiSanPhamAdmin/Delete/5
+        //[HttpPost]
+        //public ActionResult XoaTamThoi(String id, LoaiSanPham lsp)
+        //{
+        //    try
+        //    {
+        //        // TODO: Add delete logic here
+        //        lsp.TinhTrang = "1";
+        //        LoaiSanPhamBUS.EditLSP(id, lsp);
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
         // GET: Admin/LoaiSanPhamAdmin/Delete/5
         public ActionResult Delete(int id)
         {

@@ -43,7 +43,7 @@ namespace Shop.Models.BUS
         public static void DeleteLSP(String id, LoaiSanPham lsp)
         {
             var db = new ShopDegreyConnectionDB();
-            db.Update(lsp, id);
+            db.Delete("LoaiSanPham", "MaLoaiSanPham", lsp, id);
         }
     }
 }
