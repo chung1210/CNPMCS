@@ -8,7 +8,6 @@
 <h2>Quản Lý Tài khoản</h2>
 
 <style>
-
     table {
         border-collapse: collapse;
         width: 50%;
@@ -39,14 +38,14 @@
     </tr>
     @foreach (var item in Model)
     {
-        <tr>
-            <td>@item.Id</td>
-            <td>@item.Email</td>
-            <td>@item.EmailConfirmed</td>
-            <td>@item.PhoneNumber</td>
-            <td>@item.UserName</td>
-            <td><a href="@Url.Action("Delete","AccountAdmin",new { id = @item.Id })"><img style="max-width:40px;max-height:40px" src="~/Asset/images/icons/delete.png" /></a></td>
-        </tr>
+    <tr>
+        <td>@item.Id</td>
+        <td>@item.Email</td>
+        <td>@item.EmailConfirmed</td>
+        <td>@item.PhoneNumber</td>
+        <td>@item.UserName</td>
+        <td><a href="@Url.Action("Delete","AccountAdmin",new { id = @item.Id })"><img style="max-width:40px;max-height:40px" src="~/Asset/images/icons/delete.png" /></a></td>
+    </tr>
     }
 
 </table>

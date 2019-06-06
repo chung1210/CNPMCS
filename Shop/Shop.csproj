@@ -3504,7 +3504,6 @@
     <Content Include="Areas\AssetAdmin\ckeditor\skins\moono-lisa\readme.md" />
     <Content Include="Areas\Admin\Views\SanPhamAdmin\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\HoaDonAdmin\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\_ChiTietHoaDon.cshtml" />
     <Content Include="Areas\Admin\Views\AccountAdmin\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />

@@ -90,6 +90,11 @@ namespace Shop.Models.BUS
             var db = new ShopDegreyConnectionDB();
             db.Update(id, sp);
         }
+        public static void DeleteSP(String id, SanPham sp)
+        {
+            var db = new ShopDegreyConnectionDB();
+            db.Delete("SanPham", "MaSanPham", sp, id);
+        }
         public static void CapNhatLuotView(string masp)
         {
             var db = new ShopDegreyConnectionDB();

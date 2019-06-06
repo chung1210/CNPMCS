@@ -72,7 +72,7 @@ namespace Shop.Areas.Admin.Controllers
         public ActionResult XoaTamThoi(String id, LoaiSanPham lsp)
         {
             try
-            {
+            {            
                 LoaiSanPhamBUS.DeleteLSP(id, lsp);
                 return RedirectToAction("Index");
             }

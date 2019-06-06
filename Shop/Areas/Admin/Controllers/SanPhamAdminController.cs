@@ -116,10 +116,10 @@ namespace Shop.Areas.Admin.Controllers
             }
         }
 
-
+       
         public ActionResult Delete(String id, SanPham sp)
         {
-            // var tam = ShopBUS.ChiTiet(id);
+           // var tam = ShopBUS.ChiTiet(id);
             try
             {
                 // TODO: Add delete logic here
@@ -135,7 +135,7 @@ namespace Shop.Areas.Admin.Controllers
                 //}
 
                 //ShopBUS.UpdateSP(id, tam);
-                //ShopBUS.DeleteSP(id, sp);
+                ShopBUS.DeleteSP(id, sp);
 
                 return RedirectToAction("Index");
             }
