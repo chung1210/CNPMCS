@@ -116,33 +116,26 @@ namespace Shop.Areas.Admin.Controllers
             }
         }
 
-        // GET: Admin/SanPhamAdmin/Delete/5
-        public ActionResult Delete(String id)
-        {
-            return View(ShopBUS.ChiTiet(id));
-        }
 
-        // POST: Admin/SanPhamAdmin/Delete/5
-        [HttpPost]
-        [ValidateInput(false)]
         public ActionResult Delete(String id, SanPham sp)
         {
-            var tam = ShopBUS.ChiTiet(id);
+            // var tam = ShopBUS.ChiTiet(id);
             try
             {
                 // TODO: Add delete logic here
-                if (tam.SoLuongDaBan > 10)
-                {
-                    tam.SoLuongDaBan = 0;
-                }
-                if (tam.LuotXem > 10) { tam.LuotXem = 0; }
-                if (tam.TinhTrang == "1         ") { tam.TinhTrang = "0         "; }
-                else
-                {
-                    tam.TinhTrang = "1         ";
-                }
+                //if (tam.SoLuongDaBan > 10)
+                //{
+                //    tam.SoLuongDaBan = 0;
+                //}
+                //if (tam.LuotXem > 10) { tam.LuotXem = 0; }
+                //if (tam.TinhTrang == "1         ") { tam.TinhTrang = "0         "; }
+                //else
+                //{
+                //    tam.TinhTrang = "1         ";
+                //}
 
-                ShopBUS.UpdateSP(id, tam);
+                //ShopBUS.UpdateSP(id, tam);
+                //ShopBUS.DeleteSP(id, sp);
 
                 return RedirectToAction("Index");
             }

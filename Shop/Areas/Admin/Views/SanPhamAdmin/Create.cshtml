@@ -3,8 +3,8 @@
     ViewBag.Title = "Create";
     Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
 }
-<script src="~/Areas/AssetAdmin/js/product/previewFile.js"></script>
-<h2>Create</h2>
+
+
 <style>
     input [type-text] {
         width: 100%;
@@ -73,7 +73,7 @@
         <tr>
             <td> Tên Sản Phẩm</td>
             <td>
-                <input style="width:300px;background-color:black; float:left; height:35px" maxlength="11" type="text" name="TenSanPham" required />
+                <input style="width:300px;background-color:black; float:left; height:35px" maxlength="50" type="text" name="TenSanPham" required />
             </td>
         </tr>
 
@@ -97,7 +97,7 @@
         <tr>
             <td colspan="3">
                 <input style="height:40px;width:300px;margin-left:32%; margin-top:30px; background:#016ABC; color:#fff; border: 1px solid #eee;  border-radius:20px;
-    " type="submit" name="btn_ThemSanPham" value="Hoàn Tất Thêm Sản Phẩm" />
+    " type="submit" name="btn btn-default pull-right" value="Hoàn Tất Thêm Sản Phẩm" />
             </td>
         </tr>
     </table>
