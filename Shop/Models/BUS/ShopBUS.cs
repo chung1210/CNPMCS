@@ -88,7 +88,7 @@ namespace Shop.Models.BUS
         public static void UpdateSP(String id, SanPham sp)
         {
             var db = new ShopDegreyConnectionDB();
-            db.Update(id, sp);
+            db.Update("SanPham", "MaSanPham", sp, id);
         }
         public static void DeleteSP(String id, SanPham sp)
         {
