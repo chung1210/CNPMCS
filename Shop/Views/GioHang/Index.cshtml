@@ -4,13 +4,7 @@
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-    <!-- Title Page -->
-    @*<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(/Asset/images/heading-pages-01.jpg);">
-        <h2 class="l-text2 t-center">
-            Cart
-        </h2>
-    </section>*@
-
+ 
     <!-- Cart -->
     <section class="cart bgwhite p-t-70 p-b-100">
         <div class="container">
@@ -36,12 +30,12 @@
                         </td>
                         @using (Html.BeginForm("CapNhat", "GioHang", FormMethod.Post))
                         {
-                            @*<td class="column-2"><input type="hidden" name="tensanpham" value="@item.TenSanPham" /></td>
-                           <td class="column-3"><input type="hidden" name="gia" value="@item.Gia" /></td>*@
+                            @*<td class="column-2"><input type="hidden" name="tensanpham" value="@item.TenSanPham" /></td>*@
+                           
                             @Html.Partial("_GioHang", Shop.Models.BUS.ShopBUS.ChiTiet(item.MaSanPham.ToString()))
                     <td class="column-4">
-                        <input class="size8 m-text18 t-center num-product" type="number" value="@item.SoLuong" min="1" max="1000" name="soluong" />
-                     
+                        <input class="size8 m-text18 t-center num-product" type="number" value="@item.SoLuong" min="1" max="1000" name="soluong" /> <input type="submit" class="btn btn-default pull-right" value="Cập nhật" /> <br />
+
                     </td>
                             <td class="column-5"><span>@item.TongTien VNĐ</span></td>
                         }

@@ -1,4 +1,5 @@
-﻿@model  ShopDegreyConnection.SanPham
+﻿
+@model  ShopDegreyConnection.SanPham
 @{
     ViewBag.Title = "Edit";
     Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
@@ -48,56 +49,55 @@
         }
 </style>
 <script src="~/Areas/AssetAdmin/js/product/previewFile.js"></script>
-@using (Html.BeginForm("Edit", "SanPhamAdmin", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
+ @using (Html.BeginForm("Edit", "SanPhamAdmin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+ {
     <table style="width:80%; margin:auto; background:black;">
-    <tr>
-        <td> Mã Sản Phẩm</td>
-        <td> <input style="width:300px; float:left; background-color:black;height:35px" maxlength="11" type="text" name="MaSanPham" required readonly value="@Model.MaSanPham" /></td>
-        <td rowspan="8">
-            <div>
-                <img id="target" class="img" src="~/Asset/images/@Model.Hinh" alt="your image" style="float:right;width:320px;height:300px" />
-            </div>
-        </td>
-    </tr>
+        <tr>
+            <td> Mã Sản Phẩm</td>
+            <td> <input style="width:300px; float:left; height:35px ;background-color:black;" maxlength="11" type="text" name="MaSanPham" required readonly value="@Model.MaSanPham" /></td>
+            <td rowspan="8">
+                <div>
+                    <img id="target" class="img" src="~/Asset/images/@Model.Hinh" alt="your image" style="float:right;width:320px;height:300px" />
+                </div>
+            </td>
+        </tr>
 
-    <tr>
-        <td> Mã Loại Sản Phẩm</td>
-        <td>
-            @Html.DropDownList("MaLoaiSanPham", null, new { @style = "float:left;width:300px; background:black; height:30px;" })
-        </td>
-    </tr>
+        <tr>
+            <td> Mã Loại Sản Phẩm</td>
+            <td>
+                @Html.DropDownList("MaLoaiSanPham", null, new { @style = "float:left;width:300px; background:black; height:30px;" })
+            </td>
+        </tr>
 
-    <tr>
-        <td> Tên Sản Phẩm</td>
-        <td>
-            <input style="width:300px; float:left; height:35px;background-color:black;" maxlength="11" type="text" name="TenSanPham" value="@Model.TenSanPham" required />
-        </td>
-    </tr>
+        <tr>
+            <td> Tên Sản Phẩm</td>
+            <td>
+                <input style="width:300px; float:left; height:35px; background-color:black;" maxlength="50 " type="text" name="TenSanPham" value="@Model.TenSanPham" required />
+            </td>
+        </tr>
 
-    <tr>
-        <td> Hình </td>
-        <td> <input type="file" name="Hinh" required /></td>
-    </tr>
+        <tr>
+            <td> Hình </td>
+            <td> <input type="file" name="file_Hinh" required /></td>
+        </tr>
 
-    <tr>
-        <td> Giá </td>
-        <td> <input style="width:300px;float:left" type="number" name="Gia" required value="@Model.Gia" /></td>
-    </tr>
+        <tr>
+            <td> Giá </td>
+            <td> <input style="width:300px;float:left;background-color:black;" type="number" name="Gia" required value="@Model.Gia" /></td>
+        </tr>
 
-    <tr>
-        <td style="width:300px;"> Ghi Chú </td>
-        <td colspan="2"><textarea class="ckeditor" name="GhiChu" style="width:300px;height:150px;margin-top:100px;   max-width:100px;max-height:600px;" rows="4" cols="30">@Model.GhiChu</textarea></td>
-    </tr>
+        <tr>
+            <td> Ghi Chú </td>
+            <td> <input style="width:300px;float:left;background-color:black;" type="text" name="Ghi Chu" required value="@Model.GhiChu" /></td>
+        </tr>
 
+       
 
-    <tr>
-        <td colspan="3">
-            <input style="height:40px;width:300px;margin-left:32%; background:#016ABC; color:#fff; border: 1px solid #eee;  border-radius:20px;
-    box-shadow:5px 5px 5px #eee;" type="submit" name="btn_EditSanPham" value="Xác nhận Chỉnh Sửa" />
-        </td>
-    </tr>
+        <tr>
+            <td colspan="3">
+                <input style="height:40px;width:300px;margin-left:32%; background:#016ABC; color:#fff; border: 1px solid #eee;  border-radius:20px;
+    box-shadow:5px 5px 5px #eee;" type="submit" name="btn btn-default pull-right" value="Xác nhận Chỉnh Sửa" />
+            </td>
+        </tr>
     </table>
 }
-
-

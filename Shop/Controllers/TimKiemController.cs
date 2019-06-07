@@ -14,7 +14,7 @@ namespace Shop.Controllers
         public ActionResult KetQuaTimKiem(string timkiem,  string MaLoaiSanPham, int page = 1, int pagesize = 9)
         {
 
-            ViewBag.MaLoaiSanPham = new SelectList(LoaiSanPhamBUS.DanhSach(), "MaLoaiSanPham", "TenLoaiSanPham");
+            ViewBag.MaLoaiSanPham = new SelectList(LoaiSanPhamBUS.DanhSachAdmin(), "MaLoaiSanPham", "TenLoaiSanPham");
             var db = TimKiemBUS.TimKiem(timkiem, MaLoaiSanPham).ToPagedList(page, pagesize);
              return View(db);
 
