@@ -15,35 +15,46 @@
 
                         <tr class="table-head">
                             <th class="column-1">Sản Phẩm</th>
-                            <th class="column-2">Tên Sản Phẩm</th>
-                            <th class="column-3">Giá Tiền</th>
+                            <th></th>
+                            <th class="column-2 text-center">Tên Sản Phẩm</th>
+                            <th class="column-3 text-center">Giá Tiền</th>
                             <th class="column-4 p-l-70">Số Lượng</th>
-                            <th class="column-5">Tổng Tiền</th>
+                            <th class="column-5 text-center">Tổng Tiền</th>
                         </tr>
-                        @foreach (var item in Model)
+                        @foreach (var item in Model) 
                         {
+                           
                     <tr class="table-row">
+
                         <td class="column-1">
-                            <div class="cart-img-product b-rad-4 o-f-hidden">
+                            <div class="cart-img-product b-rad-4 o-f-hidden p-r-50">
                                 <img src="~/Asset/images/@item.Hinh" alt="IMG-PRODUCT">
                             </div>
                         </td>
                         @using (Html.BeginForm("CapNhat", "GioHang", FormMethod.Post))
                         {
-                            @*<td class="column-2"><input type="hidden" name="tensanpham" value="@item.TenSanPham" /></td>*@
-                           
-                            @Html.Partial("_GioHang", Shop.Models.BUS.ShopBUS.ChiTiet(item.MaSanPham.ToString()))
-                    <td class="column-4">
-                        <input class="size8 m-text18 t-center num-product" type="number" value="@item.SoLuong" min="1" max="1000" name="soluong" /> <input type="submit" class="btn btn-default pull-right" value="Cập nhật" /> <br />
 
-                    </td>
-                            <td class="column-5"><span>@item.TongTien VNĐ</span></td>
+                            <td >
+                                <div>
+                                    <input type="hidden" name="masanpham" value="@item.MaSanPham" />
+                                    <input type="hidden" name="tensanpham" value="@item.TenSanPham" />
+                                    <input type="hidden" name="gia" value="@item.Gia" />
+                                </div>
+                            </td>
+                            @Html.Partial("_GioHang", Shop.Models.BUS.ShopBUS.ChiTiet(item.MaSanPham.ToString()))
+
+                            <td class="column-4 text-center">
+                                <input class="size8 m-text18 t-center num-product " type="number" value="@item.SoLuong" min="1" max="1000" name="soluong" />  <input type="submit"  value="Cập Nhật" /> <br />
+
+                            </td>
+
+                            <td class="column-5 text-center"><span>@item.TongTien VNĐ</span></td>
                         }
                         <td>
-                    <a href="@Url.Action("Xoa","GioHang",new { masanpham= item.MaSanPham})" class="btn btn-default pull-right">Xóa</a>
-                            </td>
+                            <a href="@Url.Action("Xoa","GioHang",new { masanpham= item.MaSanPham})" class="btn btn-default pull-right">Xóa</a>
+                        </td>
                     </tr>
-                          
+
                         }
                     </table>
                 </div>

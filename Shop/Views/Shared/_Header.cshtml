@@ -1,4 +1,6 @@
 ﻿@*@model IEnumerable<ShopDegreyConnection.GioHang>*@
+
+
 <!-- Header -->
 <header class="header1">
     <!-- Header desktop -->
@@ -82,36 +84,39 @@
                 <span class="linedivide1"></span>
 
                 <div class="header-wrapicon2">
-                   
+
                     <img src="~/Asset/images/icons/iconfinder_shopping_cart_empty_172552.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-                    <span class="header-icons-noti">0</span>
+                    <span class="header-icons-noti">0</span> 
+
+
                     <!-- Header cart noti -->
                     <div class="header-cart header-dropdown">
-                        <ul class="header-cart-wrapitem">
-                           
-                                <li class="header-cart-item">
-                                    <div class="header-cart-item-img">
-                                        <img src="~/Asset/images/img13.png" alt="IMG">
-                                    </div>
-
-                                    <div class="header-cart-item-txt">
-                                        <a href="#" class="header-cart-item-name">
-                                            White Shirt With Pleat Detail Back
-                                        </a>
-
-                                        <span class="header-cart-item-info">
-                                            1 x $19.00
-                                        </span>
-                                    </div>
-                                </li>
-
-                           
-
-                        </ul>
-
-                        <div class="header-cart-total">
-                            Total: $75.00
+                        @*<ul class="header-cart-wrapitem">
+                @foreach (var item in Model)
+                {
+                    <li class="header-cart-item">
+                        <div class="header-cart-item-img">
+                            <img src="~/Asset/images/@item.Hinh" alt="IMG">
                         </div>
+
+                        <div class="header-cart-item-txt">
+                            <a href="#" class="header-cart-item-name">
+                                White Shirt With Pleat Detail Back
+                            </a>
+
+                            <span class="header-cart-item-info">
+                                1 x $19.00
+                            </span>
+                        </div>
+                    </li>
+                }
+
+
+                </ul>
+
+            <div class="header-cart-total">
+                Total: $75.00
+            </div>*@
 
                         <div class="header-cart-buttons">
                             <div class="header-cart-wrapbtn">
@@ -273,40 +278,37 @@
                     </div>
                 </li>
 
-                <li class="item-menu-mobile">
-                    <a href="index.html">Home</a>
-                    <ul class="sub-menu">
-                        <li><a href="index.html">Homepage V1</a></li>
-                        <li><a href="home-02.html">Homepage V2</a></li>
-                        <li><a href="home-03.html">Homepage V3</a></li>
-                    </ul>
-                    <i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
-                </li>
+            
+                    <li>
+                        @Html.ActionLink("TRANG CHỦ", "Index", "Home")
 
-                <li class="item-menu-mobile">
-                    <a href="product.html">Shop</a>
-                </li>
+                    </li>
 
-                <li class="item-menu-mobile">
-                    <a href="product.html">Sale</a>
-                </li>
+                    @*<li>
+                @Html.ActionLink("SẢN PHẨM", "Index", "Shop")
+            </li>*@
 
-                <li class="item-menu-mobile">
-                    <a href="cart.html">Features</a>
-                </li>
+                    <li>
+                        <a href="/Shop">SẢN PHẨM</a>
+                        <ul class="sub_menu">
+                            @Html.Partial("_LoaiSanPham", Shop.Models.BUS.LoaiSanPhamBUS.DanhSach())
+                        </ul>
+                    </li>
 
-                <li class="item-menu-mobile">
-                    <a href="blog.html">Blog</a>
-                </li>
+                    <li>
+                        @Html.ActionLink("GIỎ HÀNG", "Index", "GioHang")
+                    </li>
 
-                <li class="item-menu-mobile">
-                    <a href="about.html">About</a>
-                </li>
 
-                <li class="item-menu-mobile">
-                    <a href="contact.html">Contact</a>
-                </li>
-            </ul>
+                    <li>
+                        @Html.ActionLink("GIỚI THIỆU", "Index", "About")
+                    </li>
+
+                    <li>
+                        @Html.ActionLink("LIÊN HỆ", "Index", "Contact")
+                    </li>
+                </ul>
+            
         </nav>
     </div>
 </header>

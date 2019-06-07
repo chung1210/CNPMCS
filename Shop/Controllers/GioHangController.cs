@@ -42,7 +42,8 @@ namespace Shop.Controllers
             }
             catch
             {
-                return RedirectToAction("../Shop/index");
+                //return RedirectToAction("../Shop/index");
+                return RedirectToAction("../GioHang");
             }
 
         }

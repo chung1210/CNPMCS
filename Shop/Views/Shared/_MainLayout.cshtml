@@ -1,4 +1,4 @@
-﻿@*@using Microsoft.AspNet.Identity;*@
+﻿@using Microsoft.AspNet.Identity;
 @{
     ViewBag.Title = "_MainLayout";
 }
@@ -46,6 +46,13 @@
         headerPartial = new MvcHtmlString(headerPartial.ToString());
     }
     @headerPartial
+
+
+    @*@if (User.Identity.IsAuthenticated)
+    {
+        @Html.Partial("_Header", Shop.Models.BUS.GioHangBUS.DanhSach(User.Identity.GetUserId()));
+
+    }*@
 
     @RenderBody()
 
