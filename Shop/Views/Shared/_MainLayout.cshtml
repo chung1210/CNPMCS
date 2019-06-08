@@ -41,18 +41,18 @@
 </head>
 <body class="animsition">
 
-    @{
-        var headerPartial = Html.Partial("_Header");
-        headerPartial = new MvcHtmlString(headerPartial.ToString());
-    }
-    @headerPartial
+        @*@{
+            var headerPartial = Html.Partial("_Header");
+            headerPartial = new MvcHtmlString(headerPartial.ToString());
+        }
+        @headerPartial*@
 
-
+   
     @*@if (User.Identity.IsAuthenticated)
-    {
-        @Html.Partial("_Header", Shop.Models.BUS.GioHangBUS.DanhSach(User.Identity.GetUserId()));
+        {*@
+            @Html.Partial("_Header", Shop.Models.BUS.GioHangBUS.DanhSach(User.Identity.GetUserId()));
 
-    }*@
+        
 
     @RenderBody()
 
